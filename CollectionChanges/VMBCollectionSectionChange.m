@@ -17,7 +17,7 @@
 - (void)ifReloadChange:(dispatch_block_t)reloadHandler
                 insert:(dispatch_block_t)insertHandler
                 remove:(dispatch_block_t)removeHandler
-           incremental:(void (^)(NSArray *))incrementalHandler {
+           incremental:(void (^)(NSArray<VMBCollectionItemChange *> *))incrementalHandler {
     reloadHandler();
 }
 
@@ -33,7 +33,7 @@
 - (void)ifReloadChange:(dispatch_block_t)reloadHandler
                 insert:(dispatch_block_t)insertHandler
                 remove:(dispatch_block_t)removeHandler
-           incremental:(void (^)(NSArray *))incrementalHandler {
+           incremental:(void (^)(NSArray<VMBCollectionItemChange *> *))incrementalHandler {
     insertHandler();
 }
 
@@ -49,7 +49,7 @@
 - (void)ifReloadChange:(dispatch_block_t)reloadHandler
                 insert:(dispatch_block_t)insertHandler
                 remove:(dispatch_block_t)removeHandler
-           incremental:(void (^)(NSArray *))incrementalHandler {
+           incremental:(void (^)(NSArray<VMBCollectionItemChange *> *))incrementalHandler {
     removeHandler();
 }
 
@@ -67,7 +67,7 @@
 - (void)ifReloadChange:(dispatch_block_t)reloadHandler
                 insert:(dispatch_block_t)insertHandler
                 remove:(dispatch_block_t)removeHandler
-           incremental:(void (^)(NSArray *))incrementalHandler {
+           incremental:(void (^)(NSArray<VMBCollectionItemChange *> *))incrementalHandler {
     incrementalHandler(self.changes);
 }
 
@@ -181,7 +181,7 @@
 - (void)ifReloadChange:(dispatch_block_t)reloadHandler
                 insert:(dispatch_block_t)insertHandler
                 remove:(dispatch_block_t)removeHandler
-           incremental:(void (^)(NSArray *))incrementalHandler {
+           incremental:(void (^)(NSArray<VMBCollectionItemChange *> *))incrementalHandler {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:@"This class is not meant to be subclassed"
                                  userInfo:nil];
