@@ -28,12 +28,12 @@ typedef BOOL (^VMBCollectionItemComparator)(id left, id right);
 + (instancetype)removeChange;
 
 /// changes is NSArray<YACollectionItemChange>
-+ (instancetype)incrementalChange:(NSArray *)changes;
++ (instancetype)incrementalChange:(NSArray<VMBCollectionItemChange *> *)changes;
 
 - (void)ifReloadChange:(dispatch_block_t)reloadHandler
                 insert:(dispatch_block_t)insertHandler
                 remove:(dispatch_block_t)removeHandler
-           incremental:(void (^)(NSArray /* <VMBCollectionItemChange> */ *changes))incrementalHandler;
+           incremental:(void (^)(NSArray<VMBCollectionItemChange *> *changes))incrementalHandler;
 
 @end
 
